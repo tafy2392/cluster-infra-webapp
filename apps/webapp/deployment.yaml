@@ -28,15 +28,3 @@ spec:
           value: "/root"
         - name: MAVEN_CONFIG
           value: "$USER_HOME_DIR/.m2"
-        volumeMounts:
-        - name: scf
-          mountPath: /usr/local
-        - name: mvn
-          mountPath: /usr/share
-      volumes:
-      - name: scf
-        persistentVolumeClaim:
-          claimName: scf
-      - name: mvn
-        persistentVolumeClaim:
-          claimName: mvn
