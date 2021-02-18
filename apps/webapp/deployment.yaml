@@ -23,7 +23,6 @@ spec:
             port: 8080
           initialDelaySeconds: 400
           periodSeconds: 50
-        command: ["mvn", "spring-boot:run"]
         env:
         - name: USER_HOME_DIR
           value: "/root"
