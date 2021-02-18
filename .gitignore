@@ -1,2 +1,2 @@
 m*.json
-prod_infra/.terraform/*
+**/.terraform/
