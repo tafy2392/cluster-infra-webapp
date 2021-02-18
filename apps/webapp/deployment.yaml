@@ -23,7 +23,7 @@ spec:
             port: 8080
           initialDelaySeconds: 400
           periodSeconds: 50
-        cmd: ["mvn", "spring-boot:run"]
+        command: ["mvn", "spring-boot:run"]
         env:
         - name: ARG USER_HOME_DIR
           value: "/root"
