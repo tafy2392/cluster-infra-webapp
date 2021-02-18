@@ -14,7 +14,3 @@ spec:
           serviceName: echo1
           servicePort: 80
         path: /
-      - backend:
-          serviceName: echo1
-          servicePort: 80
-        path: /welcome
