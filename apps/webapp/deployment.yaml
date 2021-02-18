@@ -27,7 +27,7 @@ spec:
         env:
         - name: ARG USER_HOME_DIR
           value: "/root"
-       - name: MAVEN_CONFIG
+        - name: MAVEN_CONFIG
           value: "$USER_HOME_DIR/.m2"
         volumeMounts:
         - name: scf
