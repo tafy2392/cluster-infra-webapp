@@ -25,7 +25,7 @@ spec:
           periodSeconds: 50
         command: ["mvn", "spring-boot:run"]
         env:
-        - name: ARG USER_HOME_DIR
+        - name: USER_HOME_DIR
           value: "/root"
         - name: MAVEN_CONFIG
           value: "$USER_HOME_DIR/.m2"
