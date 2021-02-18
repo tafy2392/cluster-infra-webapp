@@ -1,0 +1,21 @@
+name: continuous integration
+on:
+- push
+- pull_request
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: set up py37
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: install yamllint
+      run: |
+        pip install yamllint
+    - name: run yamllint
+      run: |
+        yamllint ./apps/
