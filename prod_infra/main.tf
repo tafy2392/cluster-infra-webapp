@@ -13,7 +13,7 @@ module "haproxy" {
 
   project         = var.project
   compute_network = var.compute_network
-  instance_type   = var.instance_type
+  instance_type   = var.haproxy_instance_type
   ssh_keys        = var.ssh_keys
 }
 

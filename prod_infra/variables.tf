@@ -21,3 +21,7 @@ variable "region" {
 variable "kubernetes_version" {
   type = string
 }
+
+variable "haproxy_instance_type" {
+  type = string
+}
