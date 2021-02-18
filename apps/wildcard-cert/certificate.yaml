@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: wildcard-webapp-coreapp-p16n-org
+  namespace: cert-manager
+  labels:
+    use-route53-solver: "true"
+spec:
+  secretName: webapp-coreapp-p16n-org
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt
+  commonName: '.webapp-coreapp.p16n.org'
+  dnsNames:
+  - '*.webapp-coreapp.p16n.org'
+  - .webapp-coreapp.p16n.org

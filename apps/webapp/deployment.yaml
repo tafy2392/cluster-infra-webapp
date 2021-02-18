@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo1
+spec:
+  selector:
+    matchLabels:
+      app: echo1
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: echo1
+    spec:
+      containers:
+      - name: echo1
+        image: tafymunya/welcomespringboot:v1
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 400
+          periodSeconds: 50
+         cmd: ["mvn", "spring-boot:run"]
+         env:
+         - name: ARG USER_HOME_DIR
+           value: "/root"
+         - name: MAVEN_CONFIG
+           value: "$USER_HOME_DIR/.m2"
+         volumeMounts:
+         - name: scf
+           mountPath: /usr/local
+         - name: mvn
+           mountPath: /usr/share
+      volumes:
+      - name: scf
+        persistentVolumeClaim:
+          claimName: scf
+      - name: mvn
+        persistentVolumeClaim:
+          claimName: mvn
