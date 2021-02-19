@@ -7,3 +7,8 @@ sudo apt-get upgrade
 sudo apt-get install curl
 
 sudo apt-get install haproxy -y
+
+apt-get install software-properties-common
+add-apt-repository ppa:certbot/certbot
+apt-get update
+apt-get install certbot -y

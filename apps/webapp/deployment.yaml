@@ -17,6 +17,12 @@ spec:
         image: tafymunya/welcomespringboot:v1
         ports:
         - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /welcome
+            port: 8080
+          initialDelaySeconds: 400
+          periodSeconds: 50
         livenessProbe:
           httpGet:
             path: /
