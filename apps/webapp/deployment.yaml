@@ -21,7 +21,7 @@ spec:
           httpGet:
             path: /welcome
             port: 8080
-          initialDelaySeconds: 400
+          initialDelaySeconds: 40
           periodSeconds: 50
         livenessProbe:
           httpGet:
